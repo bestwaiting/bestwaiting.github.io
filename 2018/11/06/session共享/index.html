@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="session,redis,spring session,">
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bestwaiting for meeting you!">
-<meta property="og:url" content="http://yoursite.com/categories/Hexo/index.html">
+<meta name="description" content="现在的项目基本都是分布式系统，涉及到session共享，保证用户的无感知；  nginx + tomcat nginx 配置同一用户分配到同一Tomcat上，使用Tomcat session；   tomcat + redis Tomcat 插件配置session存入Tomcat，避免修改代码   request session 封装request(HttpServletRequestWrappe">
+<meta name="keywords" content="session,redis,spring session">
+<meta property="og:type" content="article">
+<meta property="og:title" content="session共享">
+<meta property="og:url" content="http://yoursite.com/2018/11/06/session共享/index.html">
 <meta property="og:site_name" content="Bestwaiting for meeting you!">
+<meta property="og:description" content="现在的项目基本都是分布式系统，涉及到session共享，保证用户的无感知；  nginx + tomcat nginx 配置同一用户分配到同一Tomcat上，使用Tomcat session；   tomcat + redis Tomcat 插件配置session存入Tomcat，避免修改代码   request session 封装request(HttpServletRequestWrappe">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-07T09:25:59.430Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bestwaiting for meeting you!">
+<meta name="twitter:title" content="session共享">
+<meta name="twitter:description" content="现在的项目基本都是分布式系统，涉及到session共享，保证用户的无感知；  nginx + tomcat nginx 配置同一用户分配到同一Tomcat上，使用Tomcat session；   tomcat + redis Tomcat 插件配置session存入Tomcat，避免修改代码   request session 封装request(HttpServletRequestWrappe">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/Hexo/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/06/session共享/">
 
 
 
 
 
-  <title>分类: Hexo | Bestwaiting for meeting you!</title>
+  <title>session共享 | Bestwaiting for meeting you!</title>
   
 
 
@@ -140,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -276,79 +281,203 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Hexo<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/06/session共享/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="bestwaiting">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bestwaiting for meeting you!">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/10/29/hexo创建文章/" itemprop="url">
-              
-                <span itemprop="name">hexo 创建文章</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">session共享</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-10-29T17:05:16+08:00" content="2018-10-29">
-          10-29
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-06T14:10:38+08:00">
+                2018-11-06
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/session/" itemprop="url" rel="index">
+                    <span itemprop="name">-session</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/29/hexo安装/" itemprop="url">
-              
-                <span itemprop="name">hexo安装</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-10-29T17:03:16+08:00" content="2018-10-29">
-          10-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <p>现在的项目基本都是分布式系统，涉及到session共享，保证用户的无感知；</p>
+<ol>
+<li>nginx + tomcat<ul>
+<li>nginx 配置同一用户分配到同一Tomcat上，使用Tomcat session；</li>
+</ul>
+</li>
+<li>tomcat + redis<ul>
+<li>Tomcat 插件配置session存入Tomcat，避免修改代码</li>
+</ul>
+</li>
+<li>request session<ul>
+<li>封装request(HttpServletRequestWrapper),调用httpsession</li>
+<li>封装session(HttpSessionWrapper),实现自己的session管理</li>
+<li>自定义filter，设置如何拦截获取sessionID</li>
+<li>配置filter生效</li>
+</ul>
+</li>
+<li>shiro session(<a href="https://blog.csdn.net/qq_34021712/article/category/8000629" target="_blank" rel="noopener">https://blog.csdn.net/qq_34021712/article/category/8000629</a>)<br>shiro不仅提供了权限管理功能，而且也提供了会话管理功能，可以自定义sessionDao来实现session共享功能。其实shiro就是对request session进行了封装实现。<ul>
+<li>自定义sessionDao(AbstractSessionDAO)</li>
+<li>自定义DefaultWebSessionManager解决频繁执行doreadsession读取session属性；</li>
+<li>自定义SimpleSession解决频繁写入session；</li>
+<li>自定义缓存实现</li>
+</ul>
+</li>
+<li>spring session<br>有spring session介入管理session对象<ul>
+<li>servler的httpsession替换为spring-session的httpsession</li>
+<li>配置spring-data-redis连接地址</li>
+<li>启用RedisHttpSessionConfiguration,默认使用cookie关联sessionID，若使用header则启用HeaderHttpSessionStrategy</li>
+</ul>
+</li>
+</ol>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/session/" rel="tag"># session</a>
+          
+            <a href="/tags/redis/" rel="tag"># redis</a>
+          
+            <a href="/tags/spring-session/" rel="tag"># spring session</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/05/jenkins安装/" rel="next" title="jenkins安装">
+                <i class="fa fa-chevron-left"></i> jenkins安装
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -356,6 +485,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -577,6 +710,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
