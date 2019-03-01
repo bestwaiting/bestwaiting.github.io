@@ -5,7 +5,7 @@
     <url>%2F2018%2F11%2F06%2Fsession%E5%85%B1%E4%BA%AB%2F</url>
     <content type="text"><![CDATA[现在的项目基本都是分布式系统，涉及到session共享，保证用户的无感知； nginx + tomcat nginx 配置同一用户分配到同一Tomcat上，使用Tomcat session； tomcat + redis Tomcat 插件配置session存入Tomcat，避免修改代码 request session 封装request(HttpServletRequestWrapper),调用httpsession 封装session(HttpSessionWrapper),实现自己的session管理 自定义filter，设置如何拦截获取sessionID 配置filter生效 shiro session(https://blog.csdn.net/qq_34021712/article/category/8000629)shiro不仅提供了权限管理功能，而且也提供了会话管理功能，可以自定义sessionDao来实现session共享功能。其实shiro就是对request session进行了封装实现。 自定义sessionDao(AbstractSessionDAO) 自定义DefaultWebSessionManager解决频繁执行doreadsession读取session属性； 自定义SimpleSession解决频繁写入session； 自定义缓存实现 spring session有spring session介入管理session对象 servler的httpsession替换为spring-session的httpsession 配置spring-data-redis连接地址 启用RedisHttpSessionConfiguration,默认使用cookie关联sessionID，若使用header则启用HeaderHttpSessionStrategy]]></content>
       <categories>
-        <category>-session</category>
+        <category>session</category>
       </categories>
       <tags>
         <tag>session</tag>
@@ -18,8 +18,8 @@
     <url>%2F2018%2F11%2F05%2Fubuntu%2Fjenkins%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[Jenkins是基于Java开发的一种持续集成工具，用于监控持续重复的工作，功能包括：（1）持续的软件版本发布/测试项目。（2）监控外部调用执行的工作。 jenkins依赖于Java，首先安装Java环境 jenkins安装 1234wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -sudo sh -c &apos;echo deb http://pkg.jenkins.io/debian-stable binary/ &gt; /etc/apt/sources.list.d/jenkins.list&apos;sudo apt-get updatesudo apt-get install jenkins 安装完成查看进程 1ps -ef |grep jenkins Jenkins默认端口是8080，在配置文件/etc/default/jenkins中定义； 启动/重启/关闭/状态 1234sudo service jenkins startsudo service jenkins restartsudo service jenkins stopsudo service jenkins status 使用配置，访问localhost:8080 12查看初始验证码vim /var/lib/jenkins/secrets/initialAdminPassword 进入插件的界面，选择需要的插件 创建用户和配置，开始使用jenkins注意事项若登录后出现空白页面，建议使用localhost:8080/restart重启jenkins入门手册]]></content>
       <categories>
-        <category>jenkins</category>
         <category>ubuntu</category>
+        <category>jenkins</category>
         <category>jenkins</category>
       </categories>
       <tags>
