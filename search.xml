@@ -15,11 +15,11 @@
   </entry>
   <entry>
     <title><![CDATA[jenkins安装]]></title>
-    <url>%2F2018%2F11%2F05%2Fjenkins%E5%AE%89%E8%A3%85%2F</url>
+    <url>%2F2018%2F11%2F05%2Fubuntu%2Fjenkins%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[Jenkins是基于Java开发的一种持续集成工具，用于监控持续重复的工作，功能包括：（1）持续的软件版本发布/测试项目。（2）监控外部调用执行的工作。 jenkins依赖于Java，首先安装Java环境 jenkins安装 1234wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -sudo sh -c &apos;echo deb http://pkg.jenkins.io/debian-stable binary/ &gt; /etc/apt/sources.list.d/jenkins.list&apos;sudo apt-get updatesudo apt-get install jenkins 安装完成查看进程 1ps -ef |grep jenkins Jenkins默认端口是8080，在配置文件/etc/default/jenkins中定义； 启动/重启/关闭/状态 1234sudo service jenkins startsudo service jenkins restartsudo service jenkins stopsudo service jenkins status 使用配置，访问localhost:8080 12查看初始验证码vim /var/lib/jenkins/secrets/initialAdminPassword 进入插件的界面，选择需要的插件 创建用户和配置，开始使用jenkins注意事项若登录后出现空白页面，建议使用localhost:8080/restart重启jenkins入门手册]]></content>
       <categories>
-        <category>ubuntu</category>
         <category>jenkins</category>
+        <category>ubuntu</category>
         <category>jenkins</category>
       </categories>
       <tags>
@@ -29,7 +29,7 @@
   </entry>
   <entry>
     <title><![CDATA[hexo小工具]]></title>
-    <url>%2F2018%2F11%2F02%2Fhexo%E5%B0%8F%E5%B7%A5%E5%85%B7%2F</url>
+    <url>%2F2018%2F11%2F02%2Fhexo%2Fhexo%E5%B0%8F%E5%B7%A5%E5%85%B7%2F</url>
     <content type="text"><![CDATA[这里主要介绍目前小白接触过的hexo使用小工具，搜索和分享； 1. 搜索配置123456789101112安装hexo插件：npm install hexo-generator-searchdb --save站点配置：search: path: search.xml field: post format: html limit: 10000主题配置：# Local searchlocal_search: enable: true 2. 分享配置JiaThis是稳步提升网站流量和搜索引擎排名的WEB2.0工具！通过JiaThis,你网站的内容将被分享到互联网的任何角落，稳步提升您的网站流量！JiaThis是中国最大的社会化分享按钮及工具提供商。12]]></content>
       <categories>
         <category>hexo</category>
@@ -40,7 +40,7 @@
   </entry>
   <entry>
     <title><![CDATA[Mac环境]]></title>
-    <url>%2F2018%2F11%2F02%2FMac%E7%8E%AF%E5%A2%83%2F</url>
+    <url>%2F2018%2F11%2F02%2Fmac%2FMac%E7%8E%AF%E5%A2%83%2F</url>
     <content type="text"><![CDATA[Mac下安装开发常用工具介绍，Redis，MySQL等 1. Mac通过brew安装Redis123456789101. home-brew安装 brew install redis2. 启动Redis服务 brew services start redis3. 关闭Redis服务 brew services stop redis4. 重启Redis服务 brew services restart redis5. 启动Redis客户端 redis-cli]]></content>
       <categories>
         <category>Mac</category>
@@ -54,7 +54,7 @@
   </entry>
   <entry>
     <title><![CDATA[ubuntu 安装 MySql]]></title>
-    <url>%2F2018%2F10%2F29%2Fubuntu-%E5%AE%89%E8%A3%85-MySql%2F</url>
+    <url>%2F2018%2F10%2F29%2Fubuntu%2Fubuntu-%E5%AE%89%E8%A3%85-MySql%2F</url>
     <content type="text"><![CDATA[mysql安装步骤及注意事项 1. 安装mysql1sudo apt-get install mysql-server mysql-client 2. 查看mysql是否安装成功1netstat -tap | grep mysql 3. 登录mysql1mysql -u root -p 错误解决方案123456如提示不能登录的话，启用安全模式绕过密码登录，然后修改密码 sudo /etc/init.d/mysql stop sudo /usr/bin/mysqld_safe --skip-grant-tables --skip-networking &amp;如提示mysqld_safe Directory ‘/var/run/mysqld’ for UNIX socket file don’t exists sudo mkdir -p /var/run/mysqld sudo chown mysql:mysql /var/run/mysqld 4. 修改密码12UPDATE mysql.user SET authentication_string=PASSWORD(&apos;root&apos;), plugin=&apos;mysql_native_password&apos; WHERE User=&apos;root&apos;;flush privileges; 5. 验证登录12sudo /etc/init.d/mysql startmysql -u root -p]]></content>
       <categories>
         <category>ubuntu</category>
@@ -67,7 +67,7 @@
   </entry>
   <entry>
     <title><![CDATA[ubuntu常用工具安装]]></title>
-    <url>%2F2018%2F10%2F29%2Fubuntu-tools%2F</url>
+    <url>%2F2018%2F10%2F29%2Fubuntu%2Fubuntu-tools%2F</url>
     <content type="text"><![CDATA[ubuntu系统上安装一些常用软件介绍 1. chrome浏览器 1234sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -lsudo apt updatesudo apt install google-chrome-stable 2. git 12345sudo apt-get install gitgit --version //测试git是否安装成功// 配置全局用户名和密码git config --global user.name "***"git config --global user.email "*@*.com" 3. atom编译器 首先从官网下载deb包 切换到atom deb包所在目录,使用命令进行安装 1sudo dpkg -i atom-amd64.deb 此时可能会遇到一些问题，需要安装一些依赖包、 1sudo apt-get -f install 打开atom 1atom 4. terminator终端安装与配置 安装 1sudo apt-get install terminator 配置 12cd ~/.config/terminator/sudo gedit config 修改配置文件 12345678910111213141516171819202122232425262728[global_config] title_transmit_bg_color = &quot;#d30102&quot; focus = system suppress_multiple_term_dialog = True[keybindings][profiles][[default]] palette = &quot;#2d2d2d:#f2777a:#99cc99:#ffcc66:#6699cc:#cc99cc:#66cccc:#d3d0c8:#747369:#f2777a:#99cc99:#ffcc66:#6699cc:#cc99cc:#66cccc:#f2f0ec&quot; background_color = &quot;#2D2D2D&quot; # 背景颜色 background_image = None background_darkness = 0.85 cursor_color = &quot;#2D2D2D&quot; # 光标颜色 cursor_blink = True # 光标是否闪烁 foreground_color = &quot;#EEE9E9&quot; # 文字的颜色 use_system_font = False # 是否启用系统字体 font = Ubuntu Mono 13 # 字体设置，后面的数字表示字体大小 copy_on_selection = True # 选择文本时同时将数据拷贝到剪切板中 show_titlebar = False # 不显示标题栏，也就是 terminator 中那个默认的红色的标题栏[layouts][[default]] [[[child1]]] type = Terminal parent = window0 profile = default [[[window0]]] type = Window parent = &quot;&quot;[plugins] 5. Cisco VPN 一. 命令行安装与使用 12345678// 安装vpncsudo apt-get install vpnc// vpnc命令并设置参数vpnc// ifconfig 查看 Cisco VPN 连接情况ifconfig// vpnc-disconnect 断开 Cisco VPNvpnc-disconnect 二. 图形界面安装与使用 1sudo apt-get install network-manager-vpnc network-manager-vpnc-gnome 6. docker1234567891011121314151617# 1.验证是否安装curl which curl# 2.允许apt安装软件包通过https访问存储库 sudo apt-get install apt-transport-https ca-certificates curl software-properties-common# 3.添加Docker的官方GPG秘钥 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - 验证key sudo apt-key fingerprint 0EBFCD88# 4.设置选择版本sudo add-apt-repository &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu zesty stable&quot;# 5.sudo apt-get update sudo apt-get -y install docker-ceBionic 18.04 (LTS)Artful 17.10Xenial 16.04 (LTS)Trusty 14.04 (LTS)]]></content>
       <categories>
         <category>ubuntu</category>
@@ -78,7 +78,7 @@
   </entry>
   <entry>
     <title><![CDATA[hexo 创建文章]]></title>
-    <url>%2F2018%2F10%2F29%2Fhexo%E5%88%9B%E5%BB%BA%E6%96%87%E7%AB%A0%2F</url>
+    <url>%2F2018%2F10%2F29%2Fhexo%2Fhexo%E5%88%9B%E5%BB%BA%E6%96%87%E7%AB%A0%2F</url>
     <content type="text"><![CDATA[Quick Start1. Create a new post1$ hexo new "My New Post" More info: Writing 2. Run server1$ hexo server More info: Server 3. Generate static files1$ hexo generate More info: Generating 4. Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
       <categories>
         <category>Hexo</category>
@@ -89,7 +89,7 @@
   </entry>
   <entry>
     <title><![CDATA[hexo安装]]></title>
-    <url>%2F2018%2F10%2F29%2Fhexo%E5%AE%89%E8%A3%85%2F</url>
+    <url>%2F2018%2F10%2F29%2Fhexo%2Fhexo%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[本文主要介绍使用hexo＋github搭建个人博客，可以定制属于自己的小空间，不受限于blog平台限制。现在开始介绍搭建博客的步骤:(这里只介绍最基本的博客搭建过程，至于博客个性化另行研究哦～～～) 1. 安装git2. 安装npm3. 安装hexo1sudo npm install hexo-cli -g 4. 初始化hexo12345hexo init blog（目录）cd bloghexo clean //清楚缓存hexo g //重新生成服务hexo s //本地服务部署 5. 设置主题1git clone https://github.com/iissnan/hexo-theme-next themes/next 修改_config.yml文件中theme字段为next,同时设置scheme （1）Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白 （2）Mist - Muse 的紧凑版本，整洁有序的单栏外观 （3）Pisces - 双栏 Scheme，小家碧玉似的清新 6. 申请github账号，创建新代码库(用户名.github.io)7. 修改_config.yml文件中deploy字段下配置8. 部署到github1hexo d //部署生成静态文件到github 如果命令不支持的话，安装npm deployer插件1npm install hexo-deployer-git --save]]></content>
       <categories>
         <category>Hexo</category>
