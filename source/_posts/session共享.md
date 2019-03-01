@@ -3,7 +3,7 @@ title: session共享
 date: 2018-11-06 14:10:38
 tags: [session,redis,spring session]
 categories:
- -session
+ - [session]
 ---
 现在的项目基本都是分布式系统，涉及到session共享，保证用户的无感知；
 1. nginx + tomcat
