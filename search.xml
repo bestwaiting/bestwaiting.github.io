@@ -41,15 +41,17 @@
   <entry>
     <title><![CDATA[Mac环境]]></title>
     <url>%2F2018%2F11%2F02%2Fmac%2FMac%E7%8E%AF%E5%A2%83%2F</url>
-    <content type="text"><![CDATA[Mac下安装开发常用工具介绍，Redis，MySQL等 1. Mac通过brew安装Redis123456789101. home-brew安装 brew install redis2. 启动Redis服务 brew services start redis3. 关闭Redis服务 brew services stop redis4. 重启Redis服务 brew services restart redis5. 启动Redis客户端 redis-cli]]></content>
+    <content type="text"><![CDATA[Mac下安装开发常用工具介绍，Redis，MySQL等 1. Mac通过brew安装Redis123456789101. home-brew安装 brew install redis2. 启动Redis服务 brew services start redis3. 关闭Redis服务 brew services stop redis4. 重启Redis服务 brew services restart redis5. 启动Redis客户端 redis-cli 2. Mac配置iterm克隆会话功能 打开iterm的preferences的profiles模块，修改working directory中选择reuse previous session’s directory 配置vi ~/.ssh/config123host *ControlMaster autoControlPath ~/.ssh/master-%r@%h:%p 此时登录会话时，在.ssh目录下会有”master-*的sock文件” 配置 vi /etc/ssh/ssh_config1Host * ControlMaster auto ControlPath ~/.ssh/master-%r@%h:%p]]></content>
       <categories>
         <category>Mac</category>
         <category>Redis</category>
         <category>Redis</category>
+        <category>iterm</category>
       </categories>
       <tags>
         <tag>Mac</tag>
         <tag>Redis</tag>
+        <tag>iterm</tag>
       </tags>
   </entry>
   <entry>
